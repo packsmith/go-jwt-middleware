@@ -83,8 +83,7 @@ func Test_CookieTokenExtractor(t *testing.T) {
 		wantError string
 	}{
 		{
-			name:      "no cookie",
-			wantError: "http: named cookie not present",
+			name: "no cookie",
 		},
 		{
 			name:      "token in cookie",

@@ -35,7 +35,7 @@ func AuthHeaderTokenExtractor(r *http.Request) (string, error) {
 func CookieTokenExtractor(cookieName string) TokenExtractor {
 	return func(r *http.Request) (string, error) {
 		cookie, err := r.Cookie(cookieName)
-		if err != nil {
+		if err != nil && err != http.ErrNoCookie {
 			return "", err
 		}
 
